@@ -7,4 +7,5 @@ module ApplicationHelper
 
     image_tag(avatar_url, alt: user.username, class: "rounded-circle shadow mx-auto d-block")
   end
+
 end
