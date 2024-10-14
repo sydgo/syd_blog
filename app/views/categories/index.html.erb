@@ -5,11 +5,10 @@
 </div>
 
 <div class="container">
-  <% @categories.each do |category| %>
-    <div class="row justify-content-md-center">
-      <div class="col-4 mt-4">
-        <div class="card text-center shadow mb-5 bg-white rounded">
-
+  <div class="row justify-content-center my-3">
+    <% @categories.each do |category| %>
+      <div class="mx-2 my-1">
+        <div class="card text-center shadow mb-2 bg-white rounded" style="width: 100%">
           <div class="card-body">
             <h5 class="card-title"><%= link_to category.name, category_path(category), class: "text-success" %></h5>
             <p class="card-text"> <%= pluralize(category.articles.count, "article") %></p>
@@ -20,8 +19,8 @@
           </div>
         </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
 
 <div class="flickr_pagination">
