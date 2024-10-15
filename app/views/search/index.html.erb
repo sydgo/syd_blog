@@ -1,6 +1,27 @@
-<h4>Search</h4>
-<h1 class="text-center mt-4">SYDBLOGGERS</h1>
+<% if params[:query].present? %>
+  <h1 class="center-text">Search results for "<%= params[:query] %>"</h1><br>
+<% end %>
 
-<div class="flickr_pagination">
-  <%= will_paginate @users, :container => false %>
-</div>
+<h2 class="font-weight-bold">Articles</h2><br>
+<% if @articles.blank? %>
+  <p>No articles found.</p>
+<% else %>
+  <% @articles.each do |article| %>
+    <div>
+      <h3><%= link_to article.title, article_path(article) %></h3>
+      <p><%= truncate(article.description, length: 50) %></p>
+    </div><br>
+  <% end %>
+<% end %>
+
+<h2 class="font-weight-bold">Users</h2><br>
+<% if @users.blank? %>
+  <p>No users found.</p>
+<% else %>
+  <% @users.each do |user| %>
+    <div>
+      <h3><%= link_to user.username, user_path(user) %></h3>
+      <p><%= user.email %></p>
+    </div><br>
+  <% end %>
+<% end %>

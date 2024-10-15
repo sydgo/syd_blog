@@ -1,6 +1,11 @@
 class SearchController < ApplicationController
   def index
-    @articles = Article.paginate(page: params[:page], per_page: 5)
-    @users = User.order(:name).paginate(page: params[:page], per_page: 5)
+    @articles = []
+    @users = []
+
+    if params[:query].present?
+      @articles = Article.where("title LIKE ? OR description LIKE ?", "%#{params[:query]}%", "%#{params[:query]}%")
+      @users = User.where("username LIKE ? OR email LIKE ?", "%#{params[:query]}%", "%#{params[:query]}%")
+    end
   end
 end

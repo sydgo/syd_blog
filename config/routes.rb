@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'search/index'
+  get 'search', to: 'search#index'
   root 'pages#home'
   get 'about', to: 'pages#about'
   resources :articles
