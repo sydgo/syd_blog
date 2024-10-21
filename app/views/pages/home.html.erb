@@ -1,10 +1,13 @@
-  <div class=" container" id= "home-container">
-    <div class="jumbotron text-center text-white">
-      <h1 class="display-4">SYDBLOG</h1>
-      <p class="lead">This is an article blog for people named Syd only.</p>
-      <hr class="my-4">
-      <p>I mean it Corey.</p>
-      <%= link_to "Sign Up", signup_path, class: "btn btn-success btn-lg" %>
+<div class=" container" id="home-container">
+  <div class="jumbotron text-center text-white">
+    <h1 class="display-4">SYDBLOG</h1>
+    <p class="lead">This is an article blog for people named Syd only.</p>
+    <p>I mean it Corey.</p>
+
+    <div class="flex justify-content-center">
+      <%= link_to "Log In", login_path, class: "btn btn-info btn-lg my-5 mx-2" %>
+      <%= link_to "Sign Up", signup_path, class: "btn btn-success btn-lg my-5 mx-2" %>
     </div>
   </div>
+</div>
 

@@ -42,10 +42,11 @@
           <%= link_to 'Sign Up', signup_path, class: "nav-link" %>
         </li>
       <% end %>
+
     </ul>
     <%= form_with(url: search_path, method: :get, local: true, class: 'navbar-form navbar-left') do %>
       <div style="display: flex; align-items: center;">
-        <%= text_field_tag :query, params[:query], class: 'form-control' %>
+        <%= text_field_tag :query, params[:query], class: 'form-control', placeholder: "Users/Articles" %>
         <%= submit_tag "Search", class: 'btn btn-default', style: 'color: white; border-color: white; margin-left: 10px;' %>
       </div>
     <% end %>
